@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(./img/fondmain.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.img-nav {
+  margin-right: 30%;
+}
+
+.imagen-nav {
+  margin-top: 13%;
+  width: 150px;
+  height: 60px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.imagen-nav:hover {
+  opacity: 0.6;
+}
+
+.contai-nav {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  z-index: 999;
+}
+
+.contai-nav.scrolled {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.contai-nav.scrolled .img-nav .imagen-nav {
+  width: 140px;
+  height: 50px;
+}
+
+.contai-nav.scrolled .list-nav ul {
+  margin-top: 4%;
+}
+
+.contai-nav.scrolled .list-nav ul li:hover {
+  color: rgb(255, 124, 124);
+}
+
+.list-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  margin-top: 6%;
+}
+
+.list-nav ul li {
+  cursor: pointer;
+  position: relative;
+  transition: color 0.4s ease-in-out;
+}
+
+.list-nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-nav ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 124, 124);
+  transition: 0.4s ease-in-out;
+}
+
+.list-nav ul li:hover::after {
+  width: 100%;
+}
+
+.seccion-uno {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.seccion-uno h1 {
+  width: 600px;
+  font-size: 50px;
+}
+
+.seccion-uno p {
+  width: 700px;
+  font-size: 15px;
+}
+
+/* sesion de acerca de  */
+
+.seccion-dos {
+  background-color: white;
+}
+
+.title-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.title-cont h1 {
+  margin-top: 8%;
+  font-size: 40px;
+  position: relative;
+}
+
+.title-cont h1::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: rgb(255, 0, 0);
+  margin-left: 25%;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2%;
+  align-items: center;
+  margin: 6% 5%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgb(196, 196, 196);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to left, white 50%, #db9082 50%);
+  background-size: 200.5% 100%;
+  background-position: right bottom;
+}
+
+.card:hover {
+  background-position: left bottom;
+}
+
+.card:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.card:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.card i {
+  margin-top: 10%;
+  font-size: 30px;
+  color: rgb(255, 0, 0);
+}
+
+.card h2 {
+  margin: 5% 10%;
+}
+
+.card p {
+  width: 80%;
+}
+
+.read-more {
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+  margin-bottom: 7%;
+  margin-top: 7%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-content i {
+  color: rgb(255, 124, 124);
+  font-size: 30px;
+  margin-right: 2%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* seccion de servicios */
+
+.seccion-tres {
+  background-color: white;
+  height: 100vh;
+  border-bottom: 1px solid rgb(119, 119, 119);
+}
+
+.seccion-tres .card p {
+  margin-bottom: 15%;
+  margin-left: 8%;
+}
+
+.seccion-tres .card{
+  text-align:start;
+}
+
+
+/* seccion de estudios la cuatro */
+
+.seccion-cuatro {
+  background-color: white;
+  height: 170vh;
+}
+
+.slider {
+  position: relative;
+ width: 70%;
+ height: 80vh;
+  margin: 4% auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+}
+
+.slides img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.body-text-parte-cuatro{
+  margin: 0% 15%;
+}
+
+.body-text-parte-cuatro h3{
+  font-size: 25px;
+}
